@@ -124,7 +124,7 @@ voice:
   voice_chat_mode: chained
   gpt_live:
     voice: tempo
-    instructions: 'Responde en Español de españa, pero con un tono Alemán, de una persona mayoir (70 años), barón, voz grabe.
+    instructions: 'Responde en Español de españa, pero con un tono Alemán, de una persona mayor (70 años), barón, voz grabe.
 
       '
   max_recording_seconds: 200
