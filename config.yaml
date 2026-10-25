@@ -1,5 +1,5 @@
 model:
-  default: qwen3.5-9B_MTP
+  default: Qwen3.5-9B
   auxiliary:
     model: nvidia/nemotron-3-ultra-550b-a55b
     base_url: https://integrate.api.nvidia.com/v1
@@ -40,8 +40,27 @@ agent:
   service_tier: ''
   fast_auto_seconds: 60
   verbose: false
-  reasoning_effort: high
-  personalities: {}
+  reasoning_effort: medium
+  personalities:
+voice_mode:
+  enabled: true
+  silence_treshold_ms: 800
+stt:
+  enabled: true
+  language: es
+  local:
+    model: base
+  openai:
+    model: whisper-1
+    language: ''
+  provider: local
+tts:
+  provider: edge
+  speed: 1.2
+  edge:
+    voice:  es-ES-AlvaroNeural
+  streaming:
+    min_len: 12
 terminal:
   backend: local
   cwd: 'C:\Users\ldomc\Desktop\cole_1BACH\filosofía\virtual_marx'
@@ -62,6 +81,7 @@ browser:
   inactivity_timeout: 120
   extension_control:
     enabled: false
+  use_real_profile: true
 tool_loop_guardrails:
   warnings_enabled: true
   hard_stop_enabled: false
@@ -112,22 +132,10 @@ display:
   cleanup_progress: false
   long_running_notifications: true
   busy_ack_detail: true
-stt:
-  enabled: true
-  language: en
-  local:
-    model: base
-  openai:
-    model: whisper-1
-    language: ''
-voice:
-  voice_chat_mode: chained
-  gpt_live:
-    voice: tempo
-    instructions: 'Responde en Español de españa, pero con un tono Alemán, de una persona mayor (70 años), barón, voz grabe.
-
-      '
-  max_recording_seconds: 200
+  pet:
+    enabled: true
+    slug: nukey
+    scale: 0.55
 wake_word:
   enabled: false
 memory:
@@ -223,7 +231,7 @@ local_runtime:
     - "80000"
     - "--threads"
     - "8"
-_config_version: 50
+_config_version: 51
 custom_models:
   qwen3.5-9B_llm:
     provider: lmstudio
