@@ -58,9 +58,9 @@ tts:
   provider: edge
   speed: 1.2
   edge:
-    voice:  es-ES-AlvaroNeural
+    voice: es-ES-AlvaroNeural
   streaming:
-    min_len: 12
+    min_length: 400
 terminal:
   backend: local
   cwd: 'C:\Users\ldomc\Desktop\cole_1BACH\filosofía\virtual_marx'
@@ -135,7 +135,7 @@ display:
   pet:
     enabled: true
     slug: nukey
-    scale: 0.55
+    scale: 0.85
 wake_word:
   enabled: false
 memory:
@@ -416,6 +416,44 @@ mcp_servers:
         - get_mcp_server_version
         - list_duo_sessions
     enabled: false
+
+# ── Security ──────────────────────────────────────────────────────────
+# Secret redaction is ON by default — strings that look like API keys,
+# tokens, and passwords are masked in tool output, logs, and chat
+# responses before the model or user ever sees them. Set redact_secrets
+# to false to disable (e.g. when developing the redactor itself).
+# tirith pre-exec scanning is enabled by default when the tirith binary
+# is available. Configure via security.tirith_* keys or env vars
+# (TIRITH_ENABLED, TIRITH_BIN, TIRITH_TIMEOUT, TIRITH_FAIL_OPEN).
+#
+# security:
+#   redact_secrets: true
+#   tirith_enabled: true
+#   tirith_path: "tirith"
+#   tirith_timeout: 5
+#   tirith_fail_open: true
+
+# ── Fallback Model ────────────────────────────────────────────────────
+# Automatic provider failover when primary is unavailable.
+# Uncomment and configure to enable. Triggers on rate limits (429),
+# overload (529), service errors (503), or connection failures.
+#
+# Supported providers:
+#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+#   openai-codex (OAuth — hermes auth) — OpenAI Codex
+#   nous         (OAuth — hermes auth) — Nous Portal
+#   zai          (ZAI_API_KEY)         — Z.AI / GLM
+#   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
+#   minimax      (MINIMAX_API_KEY)     — MiniMax
+#   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
+#   bedrock      (AWS IAM / boto3)     — AWS Bedrock (Converse API)
+#
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
+#
+# fallback_model:
+#   provider: openrouter
+#   model: anthropic/claude-sonnet-4
 _left_core_scoped:
   - homeassistant
 plugins:
@@ -428,7 +466,7 @@ custom_providers:
   - name: Local (127.0.0.1:7777)
     base_url: http://127.0.0.1:7777/v1
     key_env: HERMES_CUSTOM_127_0_0_1_7777_API_KEY
-    model: qwen3.5-9B_MTP
+    model: Qwen_Local
     api_mode: chat_completions
     models:
       Qwen3.5-9B: {}
