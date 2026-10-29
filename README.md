@@ -10,4 +10,4 @@ No sigue un protocolo rígido e inmutable, el modelo puede ajustar las instrucci
 
 En conclusión, el modelo entiendo y plagia con sorprendente exactitud su roll, consigue responder preguntas de carácter abstracto, político, económico, filosófico, etc; dejando de lado las respuestas generales, llegando a unas conclusiones mas profundas y verdaderas (según el punto de vista del Marx). 
 
-En los archivos MEMORY.md y USER.md se establece un limite aproximado de 40 palabras por respuesta, esta establecido para primar la naturaleza y fluidez de de las conversaciones en modo voz. Si se quiere se puede abolir, quedando un modelo plenamente funcional y con respuestas más profundas (aunque mas densas) que el original.
+En los archivos MEMORY.md y USER.md se establece un limite aproximado de 150 palabras por respuesta, esta establecido para primar la naturaleza y fluidez de de las conversaciones en modo voz. Si se quiere se puede abolir, quedando un modelo plenamente funcional y con respuestas más profundas (aunque mas densas) que el original.
